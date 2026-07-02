@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "LeetSync — Step 1",
+  "version": "0.0.1",
+  "description": "The smallest possible extension: just a popup.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LeetSync"
+  }
+}

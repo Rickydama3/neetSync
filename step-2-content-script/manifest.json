@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "LeetSync — Step 2",
+  "version": "0.0.2",
+  "description": "Adds a content script that runs on LeetCode pages.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LeetSync"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
