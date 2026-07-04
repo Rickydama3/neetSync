@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "NeetSync — Step 4",
+  "version": "0.0.4",
+  "description": "Detects real LeetCode submissions via a MAIN-world network interceptor.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NeetSync"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["interceptor.js"],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ]
+}
