@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 300px;
+        padding: 16px;
+        font-family: system-ui, sans-serif;
+        background: #0f1115;
+        color: #e6e8ec;
+      }
+      h1 { font-size: 15px; margin: 0 0 12px; }
+      label {
+        display: block;
+        font-size: 11px;
+        color: #8b919c;
+        margin: 10px 0 4px;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        background: #181b22;
+        border: 1px solid #262b34;
+        border-radius: 8px;
+        padding: 8px 10px;
+        color: #e6e8ec;
+        font-size: 13px;
+      }
+      input:focus { outline: none; border-color: #ffa116; }
+      button {
+        width: 100%;
+        margin-top: 14px;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        background: #ffa116;
+        color: #1a1a1a;
+      }
+      #status {
+        font-size: 11px;
+        margin-top: 10px;
+        min-height: 14px;
+      }
+      .ok  { color: #00b8a3; }
+      .err { color: #ff375f; }
+      .hint {
+        font-size: 10px;
+        color: #8b919c;
+        margin-top: 12px;
+        line-height: 1.5;
+        border-top: 1px solid #262b34;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>⇆ NeetSync</h1>
+
+    <label for="token">GitHub token (fine-grained PAT)</label>
+    <input id="token" type="password" placeholder="github_pat_..." />
+
+    <label for="owner">GitHub username</label>
+    <input id="owner" type="text" placeholder="Rickydama3" />
+
+    <label for="repo">Repository name</label>
+    <input id="repo" type="text" placeholder="leetcode-solutions" />
+
+    <button id="save">Save &amp; test connection</button>
+    <p id="status"></p>
+
+    <p class="hint">
+      Token needs <b>Contents: Read and write</b> on that one repo only.
+      It is stored in this extension's local storage, nowhere else.
+    </p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
